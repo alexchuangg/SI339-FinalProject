@@ -1,7 +1,21 @@
-html{
+  html{
     scroll-behavior: smooth;
   }
   
+  a.skip{
+    background: white;
+    position: absolute;
+    top: -40px;
+    -webkit-transition: top 1s ease-out;
+    transition: top 1s ease-out;
+    z-index: 1;
+  }
+  
+  a.skip:focus{
+    position: absolute;
+    top:20px;
+  }
+
   body{
     background-image: url("../images/background4.jpg");
     background-size: 1500px;
@@ -14,31 +28,37 @@ html{
 
   nav li{
     display:inline;
-    padding-right:100px;
+    margin-right:100px;
     font-size: 20px;
   }
   
-
-  nav a{
-    color: black;
-    text-decoration: none;
+  nav li{
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: bold;
+    font-weight: normal;
     padding-right: 30px;
     padding-left: 30px;
     padding-top: 5px;
     padding-bottom: 5px;
     border: 1px solid #777777;
     border-radius: 15px;
-    border-left: 1px solid #777777;
-    background-color: rgba(187, 164, 255, 0.8);
+    background-color: rgba(147, 246, 255, 0.3);
+  }
 
+  nav a{
+    text-decoration: none;
+    color: black;
   }
 
   nav{
     padding: 40px 0px; 
     padding-left: 50px;
     text-align: center;
+  }
+
+  nav li:first-child{
+    background-color: rgb(208, 190, 255);
+    border: 2px solid #000000;
+    font-weight: bold;
   }
 
   footer{
@@ -80,5 +100,43 @@ html{
     line-height: 1.75;
   }
 
+
+  @media screen and (max-width: 800px){
+    footer{
+      padding-left: 40px;
+      font-size: 15px;
+    }
+    nav ul{
+      display: grid;
+      justify-content: space-around;
+    }
+
+    nav li{
+      margin-bottom: 10px;
+    }
+    
+    body{
+      background-size: 2000px;
+    }
+  }
+
+  @media screen and (max-width: 500px){
+
+    footer li{
+      display: flex;
+      justify-content: center;
+      padding-right: 100px;
+    }
+
+    h1{
+      font-size: 30px;
+    }
+
+    .description{
+      font-size: 15px;
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+  }
 
 

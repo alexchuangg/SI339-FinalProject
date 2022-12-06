@@ -1,10 +1,24 @@
-html{
+  html{
     scroll-behavior: smooth;
+  }
+
+  a.skip{
+    background: white;
+    position: absolute;
+    top: -40px;
+    -webkit-transition: top 1s ease-out;
+    transition: top 1s ease-out;
+    z-index: 1;
+  }
+  
+  a.skip:focus{
+    position: absolute;
+    top:20px;
   }
   
   body{
     background-image: url("../images/background4.jpg");
-    background-size: 1500px;
+    background-size: 1900px;
     background-position: center;
     line-height: 1.15;
     margin: 0;
@@ -14,24 +28,25 @@ html{
 
   nav li{
     display:inline;
-    padding-right:100px;
+    margin-right:100px;
     font-size: 20px;
   }
   
-  nav a{
-    color: black;
-    text-decoration: none;
+  nav li{
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: bold;
+    font-weight: normal;
     padding-right: 30px;
     padding-left: 30px;
     padding-top: 5px;
     padding-bottom: 5px;
     border: 1px solid #777777;
     border-radius: 15px;
-    border-left: 1px solid #777777;
-    background-color: rgba(187, 164, 255, 0.8);
+    background-color: rgba(147, 246, 255, 0.3);
+  }
 
+  nav a{
+    text-decoration: none;
+    color: black;
   }
 
   nav{
@@ -40,11 +55,18 @@ html{
     text-align: center;
   }
 
+  nav li:nth-child(2){
+    background-color: rgb(208, 190, 255);
+    border: 2px solid #000000;
+    font-weight: bold;
+  }
+
   footer{
     color: black;
     background-color: rgba(147, 246, 255, 0.3);
+    margin-top: 70px;
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     font-size: 20px;
     font-family: sans-serif;
     padding-left: 260px;
@@ -67,6 +89,255 @@ html{
     font-size: 30px;
     padding-left: 100px;
     padding-top: 50px;
-    padding-bottom: 50px;
     font-weight: bold;
   }
+
+  h3{
+    font-size: 50px;
+    padding-bottom: 15px;
+    font-weight: bold;
+  }
+
+  h2{
+    font-size: 20px;
+    padding-left: 100px;
+    padding-bottom: 100px;
+    color: rgb(95, 95, 95);
+    padding-top: 5px;
+  }
+
+  p{
+    font-size: 20px;
+    padding-bottom: 20px;
+  }
+
+  .flip-card {
+    background-color: transparent;
+    width: 610px;
+    height: 350px;
+    perspective: 1000px;
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    border-radius: 25px;
+    /* background-color: orange; */
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    color: white;
+    transform: rotateY(180deg);
+    border-radius: 25px;
+  }
+
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+    grid-template-rows: repeat(2, 55%);
+    justify-items: center;
+    justify-content: center;
+    padding-bottom: 100px;
+  }
+
+  .health{
+    padding: 50px;
+    border: solid rgb(255, 182, 118) 1px;
+    border-radius: 25px;
+    color: black;
+    background-color: rgb(255, 182, 118);
+  }
+
+  .poly{
+    padding: 50px;
+    border: solid rgb(218, 163, 255) 1px;
+    border-radius: 25px;
+    color: black;
+    background-color: rgb(218, 163, 255);
+  }
+
+  .blue{
+    padding: 50px;
+    border: solid rgb(202, 200, 255) 1px;
+    border-radius: 25px;
+    color: black;
+    background-color: rgb(202, 200, 255);
+  }
+
+  .go{
+    padding: 50px;
+    border: solid rgb(255, 192, 192) 1px;
+    border-radius: 25px;
+    color: black;
+    background-color: rgb(255, 192, 192);
+  }
+
+  p{
+    color: rgb(52, 52, 52);
+  }
+
+  .flip-card-back > .healthimg{
+    background-color: rgb(255, 182, 118);
+    padding-top: 25px;
+    border-radius: 25px;
+  }
+
+  .healthimg img, .blueimg img{
+    height:300px;
+    width: auto;
+  }
+
+  .flip-card-back > .blueimg{
+    background-color: rgb(202, 200, 255);
+    padding-top: 25px;
+    border-radius: 25px;
+  }
+
+  .polyimg img{
+    padding-top: 60px;
+    padding-bottom: 30px;
+    height:235px;
+    width: auto;
+    align-content: center;
+  }
+
+  .goimg img{
+    height:302px;
+    width: auto;
+    align-content: center;
+    padding-bottom: 5px;
+  }
+
+  .flip-card-back > .polyimg{
+    background-color: rgb(218, 163, 255);
+    /* padding-top: 25px; */
+    border-radius: 25px;
+  }
+
+  .flip-card-back > .goimg{
+    background-color: rgb(255, 192, 192);
+    padding-top: 25px;
+    border-radius: 25px;
+  }
+
+  @media screen and (max-width: 800px){
+    footer{
+      padding-left: 40px;
+      font-size: 15px;
+    }
+    .grid{
+      grid-template-columns: repeat(1, 45%);
+      grid-template-rows: none;
+      padding-bottom: 0px;
+    }
+
+    h3{
+      padding-bottom: 50px;
+    }
+
+    .flip-card-front, .flip-card-back {
+      height: 50%;
+    }
+
+    .flip-card{
+      margin-bottom: 50px;
+    }
+
+    body{
+      background-size: 3500px;
+    }
+
+    nav ul{
+      display: grid;
+      justify-content: space-around;
+    }
+
+    nav li{
+      margin-bottom: 10px;
+    }
+  }
+
+  @media screen and (max-width: 500px){
+    footer{
+      padding-left: 40px;
+      font-size: 15px;
+    }
+
+    footer li{
+      display: flex;
+      justify-content: center;
+      padding-right: 100px;
+    }
+
+    h1{
+      padding: 0px;
+      text-align: center;
+    }
+
+    h2{
+      padding: 0px;
+      text-align: center;
+      padding-bottom: 50px;
+    }
+
+    h3{
+      font-size: 40px;
+      padding-bottom: 10px;
+    }
+
+    p{
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    .polyimg img{
+      padding-top: 100px;
+      padding-bottom: 50px;
+      height: 180px;
+    }
+  
+    .goimg img{
+      height:240px;
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+
+    h4{
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+
+
+  }
+
+
+
+
+
+  
